@@ -9,24 +9,94 @@
 #Ver 1.5 print inventory before and after purchases as one department_store of stuff(combine inventories from all stores into one...pretend Big Biz bought all the local stores, and want constant reporting for inventory management...)
 # as in all games there is a special way to do this that actually makes money and solves the problem...can you find 'them'? Do you know why? May require knowledge of actual python 'lore'
 
+# version 1 
+#create stores
+# freelancers = {'name':'freelancing Shop','brian': 70, 'black knight':20, 'biccus diccus':100, 'grim reaper':500, 'minstrel':-15}
+# antiques = {'name':'Antique Shop','french castle':400, 'wooden grail':3, 'scythe':150, 'catapult':75, 'german joke':5}
+# pet_shop = {'name':'Pet Shop','blue parrot':10, 'white rabbit':5, 'newt': 2}
+
+# #create an dempty shopping cart
+# cart = {}
+# #loop through stores/dicts
+# for shop in (freelancers,antiques,pet_shop) :
+#     #inputbox  to show what you can buy...capture textstring of what was bought...make lowercase
+#     buy_item = input(f"Welcome to {shop['name']}! What do you want to buy: {shop}").lower()
+#     # updat the cart
+#     cart.update({buy_item:shop.pop(buy_item)}) # use pop
+#     buy_items = ", ".join(list(cart.keys()))
+    
+# print(f'You Purchased {buy_items}. Today it is all free. Have a nice day of mayhem!')
+
+# ===================
+
+# version 1.2
+# freelancers = {'name':'freelancing Shop','brian': 70, 'black knight':20, 'biccus diccus':100, 'grim reaper':500, 'minstrel':-15}
+# antiques = {'name':'Antique Shop','french castle':400, 'wooden grail':3, 'scythe':150, 'catapult':75, 'german joke':5}
+# pet_shop = {'name':'Pet Shop','blue parrot':10, 'white rabbit':5, 'newt': 2}
+
+# #create an dempty shopping cart
+# cart = {}
+# # create a purse with 100 gp
+# purse = 1000
+# # buy items string
+# buy_items1 = ''
+# #loop through stores/dicts
+# for shop in (freelancers,antiques,pet_shop) :
+#     #inputbox  to show what you can buy...capture textstring of what was bought...make lowercase
+#     buy_item = input(f"Welcome to {shop['name']}!\n (type exit to exit store)\n What do you want to buy: {shop}").lower()
+#     # exit the store by typic exit or buying nonexistant item
+#     if buy_item == 'exit':
+#         continue
+#     if buy_item not in shop:
+#         continue
+#     # update the string
+#     buy_items1 = buy_items1 + f'{buy_item}: {shop[buy_item]} Gp,'
+#     # update the cart
+#     cart.update({buy_item:shop.pop(buy_item)}) # use pop
+#     buy_items = ", ".join(list(cart.keys())) # buy items list 
+#     total_sum = sum(cart.values())
+    
+# print(f'You Purchased {buy_items1}.\n Your total is {total_sum} Gp. Your change is {purse - total_sum} is Gp. \n Have a nice day of mayhem!')
+
+
+
+# ==================
+# version 1.4
+
 #create stores
 freelancers = {'name':'freelancing Shop','brian': 70, 'black knight':20, 'biccus diccus':100, 'grim reaper':500, 'minstrel':-15}
 antiques = {'name':'Antique Shop','french castle':400, 'wooden grail':3, 'scythe':150, 'catapult':75, 'german joke':5}
 pet_shop = {'name':'Pet Shop','blue parrot':10, 'white rabbit':5, 'newt': 2}
-
-
-
-
-
-
-
-
+#morning inventory
+department_store = {}
+for department in (freelancers,antiques,pet_shop) : department_store.update(department)
+department_store.pop('name')
+print('Mornin inventory of stores', sorted(department_store.items()))
+print('------------------')
 #create an dempty shopping cart
 cart = {}
+#create purse with 100Gp
+purse = 1000
+buy_items1 = ''
 #loop through stores/dicts
-for LOOP OVER THE SHOPS :
+for shop in (freelancers,antiques,pet_shop) :
     #inputbox  to show what you can buy...capture textstring of what was bought...make lowercase
-    buy_item = input(f'Welcome to {SHOPNAME}! what do you want to buy: {LIST ITEMS FOR SALE})
+    buy_item = input(f'Welcome to {shop["name"]}! (type exit to exit store) what do you want to buy: {shop}').lower()
+    #exit on exit typed or buying nonexistant item
+    if buy_item == 'exit':
+        continue
+    if buy_item not in shop:
+        continue
+    #update string
+    buy_items1 = buy_items1 + f'{buy_item}:{shop[buy_item]} Gp, '    
     #update the cart
-    cart.update({insert KEYVAL:VALUE}) # use pop...
-print(f'You Purchased {ITEMS PUCHASED} Today it is all free. Have a nice day of mayhem!')
+    cart.update({buy_item:shop.pop(buy_item)}) # use pop...
+    buy_items = ", ".join(list(cart.keys()))
+    total_sum = sum(cart.values())
+print(f'You Purchased {buy_items}. Your total is {total_sum} Gp. Your change is {purse - total_sum} Gp. Have a nice day of mayhem!')
+print(f'You Purchased {buy_items1}. Your total is {total_sum} Gp. Your change is {purse - total_sum} Gp. Have a nice day of mayhem!')
+# evening inventory 
+department_store_after = {**freelancers, **antiques, **pet_shop}
+department_store_after.pop('name')
+print('-------------')
+print('Evening inventory of stores', sorted(department_store_after.items()))
