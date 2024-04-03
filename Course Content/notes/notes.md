@@ -152,3 +152,38 @@ Output:
 
 ## Dictionaries
 
+
+
+![alt text](image-2.png)
+
+
+## Filehandling - Reading Files
+
+
+## Exceptions: Try/Except, Raise
+
+## Classes and Objects
+
+## Inheritance
+
+## Modules 
+
+## Zip / Unzip
+
+## Lambda Functions 
+
+## Comprehensions - Lists 
+
+## Comprehensions - Dictionary 
+
+## Randomness
+
+## Timeit and performance
+
+## Project - Crypto Machine
+
+## Project - Math Tutor
+
+## Project - Marble / Trading Game 
+
+## Bonus: Project - Palindromes 
