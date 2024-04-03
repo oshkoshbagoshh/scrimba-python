@@ -136,4 +136,17 @@ print(my_set)  # Output: {1, 2, 3, 4} because duplicates are not allowed
     
 ---
 ## Enumerate 
+- used to add numbers to a list 
+- syntax:
+  ```python
+  for num, letter in enumrate('python',start=5):
+    print(num,letter)
+
+    ```
+Output:
+![alt text](image-1.png)
+
+---
+## Sort() and Sorted()
+
 - 
