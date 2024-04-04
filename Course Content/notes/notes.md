@@ -159,10 +159,102 @@ Output:
 
 ## Filehandling - Reading Files
 
+File handling in Python is a critical skill for reading from and writing to files on your computer. Python provides built-in functions for opening, reading, writing, and closing files. Here's a basic guide to file handling operations:
+
+### Opening a File
+Use the `open()` function to open a file. The syntax is:
+```python
+file_object = open(file_name, access_mode)
+```
+- `file_name` is the name of the file to be opened.
+- `access_mode` determines the mode in which the file has to be opened, e.g., read, write, append, etc. Common modes include:
+  - `'r'` for reading (default),
+  - `'w'` for writing (creates a new file or truncates the existing file),
+  - `'a'` for appending,
+  - `'b'` for binary mode,
+  - `'+'` for read/write mode.
+
+### Reading from a File
+- **Read the entire file**: Use `file_object.read()`.
+- **Read one line at a time**: Use `file_object.readline()`.
+- **Read all lines as a list**: Use `file_object.readlines()`.
+
+Example:
+```python
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+```
+
+### Writing to a File
+- **Write a string**: Use `file_object.write(string)`.
+- **Write multiple strings**: Use `file_object.writelines(list_of_strings)`.
+
+Example:
+```python
+with open('example.txt', 'w') as file:
+    file.write("Hello, World!")
+```
+
+### Appending to a File
+Similar to writing, but opens the file in append mode `'a'` so that new data will be added at the end of the file.
+```python
+with open('example.txt', 'a') as file:
+    file.write("\nAppending a new line.")
+```
+
+### Closing a File
+It's crucial to close a file after your operations are done to free up system resources. The `with` statement automatically handles this.
+```python
+with open('example.txt', 'r') as file:
+    content = file.read()
+# No need to explicitly call file.close() here
+```
+
+### The `with` Statement
+The `with` statement simplifies exception handling by encapsulating common preparation and cleanup tasks in so-called context managers. For file operations, it ensures that the file is properly closed after its suite finishes, even if an exception is raised on the way.
+
+This basic overview covers fundamental file handling operations in Python. Depending on your specific needs, you might explore more advanced topics like working with files in binary mode or handling large files in chunks.
 
 ## Exceptions: Try/Except, Raise
+In Python, the `try` and `except` blocks are used for exception handling, allowing you to catch and handle errors or exceptions that occur during the execution of a block of code. Here's how they work:
+
+- **`try` block**: You wrap the code that might throw an exception in a `try` block.
+- **`except` block**: If an exception occurs in the `try` block, the flow of control is passed to an `except` block, allowing you to handle the error.
+
+Here's a simple example to illustrate their use:
+
+```python
+try:
+    # Code block where you suspect an error may occur
+    result = 10 / 0
+except ZeroDivisionError:
+    # Handling a specific exception
+    print("You can't divide by zero!")
+except Exception as e:
+    # Handling any other exceptions
+    print(f"An error occurred: {e}")
+else:
+    # This block is executed if no exceptions are raised
+    print("Operation successful.")
+finally:
+    # This block is executed no matter what, and is often used for cleanup
+    print("Execution completed.")
+```
+
+In this example:
+- The `try` block contains code that will raise a `ZeroDivisionError`.
+- The first `except` block catches and handles the `ZeroDivisionError`, printing a message to the user.
+- The second `except` block is a generic catch-all for any other exceptions that might occur. It captures the exception as `e` and prints a message.
+- The `else` block would run only if no exceptions are caught. Since an exception is raised in the `try` block, the `else` block is skipped.
+- The `finally` block runs regardless of whether an exception was caught or not, making it useful for cleanup activities, such as closing files or releasing resources.
 
 ## Classes and Objects
+- Classes are blueprints
+- Objects are the actual things you built
+- variables are attributes
+- functions are methods
+
 
 ## Inheritance
 

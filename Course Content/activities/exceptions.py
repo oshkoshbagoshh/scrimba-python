@@ -1,5 +1,5 @@
 # exceptions for error handling
-print("Errors: Try/Except")
+print("***Errors: Try/Except***")
 
 # try: 
 #     # code you want to run
@@ -9,3 +9,44 @@ print("Errors: Try/Except")
 #     # executed if no error
 # finally:
 #     # always executed
+
+# =============
+
+# num=int(input('Enter a number: '))
+# print("30 divided by",num, "is: ", 30/num)
+# print("**Thank you for playing!**")
+# try with general except
+try:
+    num=int(input('Enter a number: '))
+    print("30 divided by",num, "is: ", 30/num)
+except:
+    print("Invalid Input!")
+print("**Thank you for playing!**")
+
+# try with specific error
+
+try:
+    num=int(input('Enter a number between 1 and 30: '))
+    num1 = 30/num
+    if num > 30:
+        raise ValueError(num)
+except ZeroDivisionError as err:
+    print(err, "You can't divide by Zero!!!")
+except ValueError as err:
+    print(err,num, "Bad Value not between 1 and 30!")
+except:
+    print("Invalid Input!")
+else:
+    print("30 divided by",num, "is: ", 30/num)
+finally:
+    print("**Thank you for playing!**")
+
+#try:
+    #code you want to run
+#except:
+    #executed if error occurs
+#else:
+    #executed if no error
+#finally:
+    #always executed 
+
