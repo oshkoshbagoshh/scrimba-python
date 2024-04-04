@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Notees</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h2 id="notees">Notees</h2>
+<p><img src="file:////Users/aj/Desktop/bootcamp/Scrimba/scrimba-python/Course Content/notes/image.png" alt="alt text"></p>
+<hr>
+<p>In Python, a tuple is an ordered, immutable collection of elements. Tuples are similar to lists, but they have some key differences:</p>
+<ol>
+<li>
+<p>Immutability: Once a tuple is created, its elements cannot be changed. You cannot add, remove, or modify elements in a tuple.</p>
+</li>
+<li>
+<p>Syntax: Tuples are defined using parentheses <code>()</code>, although the parentheses are optional in some cases. Elements in a tuple are separated by commas.</p>
+</li>
+</ol>
+<p>Here are some examples of creating and using tuples in Python:</p>
+<ol>
+<li>Creating a tuple:</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+another_tuple = <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>  <span class="hljs-comment"># Parentheses are optional</span>
+empty_tuple = ()
+single_element_tuple = (<span class="hljs-number">7</span>,)  <span class="hljs-comment"># Note the trailing comma</span>
+</code></pre>
+<ol start="2">
+<li>Accessing elements in a tuple:</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-built_in">print</span>(my_tuple[<span class="hljs-number">0</span>])  <span class="hljs-comment"># Output: 1</span>
+<span class="hljs-built_in">print</span>(my_tuple[<span class="hljs-number">1</span>:])  <span class="hljs-comment"># Output: (2, 3)</span>
+</code></pre>
+<ol start="3">
+<li>Attempting to modify a tuple (raises an error):</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+my_tuple[<span class="hljs-number">0</span>] = <span class="hljs-number">4</span>  <span class="hljs-comment"># Raises a TypeError: &#x27;tuple&#x27; object does not support item assignment</span>
+</code></pre>
+<ol start="4">
+<li>Tuple unpacking:</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+a, b, c = my_tuple
+<span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># Output: 1</span>
+<span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># Output: 2</span>
+<span class="hljs-built_in">print</span>(c)  <span class="hljs-comment"># Output: 3</span>
+</code></pre>
+<ol start="5">
+<li>Tuple methods:</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(my_tuple.count(<span class="hljs-number">2</span>))  <span class="hljs-comment"># Output: 2</span>
+<span class="hljs-built_in">print</span>(my_tuple.index(<span class="hljs-number">3</span>))  <span class="hljs-comment"># Output: 2</span>
+</code></pre>
+<ol start="6">
+<li>Iterating over a tuple:</li>
+</ol>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> my_tuple:
+    <span class="hljs-built_in">print</span>(item)
+</code></pre>
+<p>Tuples are commonly used in situations where you want to store a collection of related values that should not be modified. They are faster than lists and can be used as keys in dictionaries or as elements in sets.</p>
+<p>Some common use cases for tuples include:</p>
+<ul>
+<li>Returning multiple values from a function</li>
+<li>Representing a fixed set of values, such as coordinates or database records</li>
+<li>Passing immutable arguments to functions</li>
+</ul>
+<p>Tuples provide a way to create immutable sequences of elements in Python, ensuring that the data remains unchanged throughout the program's execution.</p>
+<hr>
+<ul>
+<li>Sets are unordered, and there can be no duplicates in them</li>
+</ul>
+<p>Python provides three built-in types for storing collections of data: lists, tuples, and sets. Each has its own characteristics and use cases:</p>
+<h3 id="lists">Lists</h3>
+<ul>
+<li><strong>Mutable:</strong> You can change, add, or remove elements.</li>
+<li><strong>Ordered:</strong> The elements have a defined order, and that order will not change.</li>
+<li><strong>Syntax:</strong> Created using square brackets <code>[]</code>.</li>
+<li><strong>Duplicates Allowed:</strong> Lists can contain duplicate elements.</li>
+<li><strong>Example Usage:</strong> When you need a collection that can change over time, and order matters.</li>
+</ul>
+<pre><code class="language-python">my_list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]
+my_list.append(<span class="hljs-number">4</span>)  <span class="hljs-comment"># Adding an element</span>
+<span class="hljs-built_in">print</span>(my_list)  <span class="hljs-comment"># Output: [1, 2, 3, 3, 4]</span>
+</code></pre>
+<h3 id="tuples">Tuples</h3>
+<ul>
+<li><strong>Immutable:</strong> Once created, you cannot change, add, or remove elements.</li>
+<li><strong>Ordered:</strong> The elements have a defined order.</li>
+<li><strong>Syntax:</strong> Created using parentheses <code>()</code>, but can also be defined without them.</li>
+<li><strong>Duplicates Allowed:</strong> Tuples can contain duplicate elements.</li>
+<li><strong>Example Usage:</strong> When you need an ordered collection of items that should not change through the program.</li>
+</ul>
+<pre><code class="language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-comment"># my_tuple.append(4) would raise an AttributeError</span>
+<span class="hljs-built_in">print</span>(my_tuple)  <span class="hljs-comment"># Output: (1, 2, 3, 3)</span>
+</code></pre>
+<h3 id="sets">Sets</h3>
+<ul>
+<li><strong>Mutable:</strong> You can add or remove elements, but you cannot change existing elements.</li>
+<li><strong>Unordered:</strong> The elements do not have a defined order, and their order can change.</li>
+<li><strong>Syntax:</strong> Created using curly braces <code>{}</code> or the <code>set()</code> function for an empty set.</li>
+<li><strong>Duplicates Not Allowed:</strong> Sets automatically remove duplicate elements.</li>
+<li><strong>Example Usage:</strong> When you need to ensure all elements are unique or to perform set operations like union, intersection.</li>
+</ul>
+<pre><code class="language-python">my_set = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>}
+my_set.add(<span class="hljs-number">4</span>)  <span class="hljs-comment"># Adding an element</span>
+<span class="hljs-built_in">print</span>(my_set)  <span class="hljs-comment"># Output: {1, 2, 3, 4} because duplicates are not allowed</span>
+</code></pre>
+<h3 id="choosing-between-them">Choosing Between Them</h3>
+<ul>
+<li>Use <strong>lists</strong> when you need an ordered collection that you might need to alter.</li>
+<li>Use <strong>tuples</strong> for ordered collections of items that should not change.</li>
+<li>Use <strong>sets</strong> when you need uniqueness for the elements and don't care about the order.</li>
+</ul>
+<hr>
+<h1 id="while-condition">while condition:</h1>
+<h1 id="code">code</h1>
+<h1 id="iterator">iterator</h1>
+<h1 id="three-loop-questions">Three Loop Questions:</h1>
+<p>#1. What do I want to repeat?</p>
+<h1 id="--message">-&gt; message</h1>
+<p>#2. What do I want to change each time?</p>
+<h1 id="-">-&gt;</h1>
+<p>#3. How long should we repeat?</p>
+<h1 id="--1">-&gt;</h1>
+<hr>
+<h2 id="enumerate">Enumerate</h2>
+<ul>
+<li>used to add numbers to a list</li>
+<li>syntax:<pre><code class="language-python"><span class="hljs-keyword">for</span> num, letter <span class="hljs-keyword">in</span> enumrate(<span class="hljs-string">&#x27;python&#x27;</span>,start=<span class="hljs-number">5</span>):
+  <span class="hljs-built_in">print</span>(num,letter)
+
+</code></pre>
+</li>
+</ul>
+<p>Output:
+<img src="file:////Users/aj/Desktop/bootcamp/Scrimba/scrimba-python/Course Content/notes/image-1.png" alt="alt text"></p>
+<hr>
+<h2 id="sort-and-sorted">Sort() and Sorted()</h2>
+<p>In Python, sorting is a common operation that can be performed using either the <code>sort()</code> method available on lists or the <code>sorted()</code> function that works with any iterable. Both are used to order the elements of a collection in ascending or descending order. The key difference between them lies in how they return the sorted sequence and what types of data they can operate on.</p>
+<h3 id="sort-method"><code>sort()</code> Method</h3>
+<p>The <code>sort()</code> method modifies the list it is called on in place, meaning it changes the original list and does not return a new list. This method is only available for lists.</p>
+<p><strong>Syntax</strong>:</p>
+<pre><code class="language-python"><span class="hljs-built_in">list</span>.sort(key=<span class="hljs-literal">None</span>, reverse=<span class="hljs-literal">False</span>)
+</code></pre>
+<ul>
+<li><code>key</code> (optional): A function that serves as a key for the sort comparison.</li>
+<li><code>reverse</code> (optional): A boolean value. If set to <code>True</code>, the list elements are sorted as if each comparison were reversed.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">nums = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span>]
+nums.sort()
+<span class="hljs-built_in">print</span>(nums)
+<span class="hljs-comment"># Output: [1, 1, 2, 3, 4, 5, 9]</span>
+</code></pre>
+<h3 id="sorted-function"><code>sorted()</code> Function</h3>
+<p>The <code>sorted()</code> function returns a new sorted list from the elements of any iterable, without modifying the original data structure. It can be used with lists, tuples, dictionaries (sorting by keys), and other iterables.</p>
+<p><strong>Syntax</strong>:</p>
+<pre><code class="language-python"><span class="hljs-built_in">sorted</span>(iterable, key=<span class="hljs-literal">None</span>, reverse=<span class="hljs-literal">False</span>)
+</code></pre>
+<ul>
+<li><code>iterable</code>: The sequence to be sorted.</li>
+<li><code>key</code> (optional): A function that serves as a key for the sort comparison.</li>
+<li><code>reverse</code> (optional): A boolean value. If set to <code>True</code>, the resulting list is sorted in descending order.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">nums = (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span>)  <span class="hljs-comment"># This is a tuple.</span>
+sorted_nums = <span class="hljs-built_in">sorted</span>(nums)
+<span class="hljs-built_in">print</span>(sorted_nums)
+<span class="hljs-comment"># Output: [1, 1, 2, 3, 4, 5, 9]</span>
+</code></pre>
+<h3 id="custom-sorting-with-key">Custom Sorting with <code>key</code></h3>
+<p>Both <code>sort()</code> and <code>sorted()</code> accept a <code>key</code> parameter for custom sorting. For example, to sort a list of strings by their lengths:</p>
+<pre><code class="language-python">words = [<span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;pie&#x27;</span>, <span class="hljs-string">&#x27;Washington&#x27;</span>, <span class="hljs-string">&#x27;book&#x27;</span>]
+words.sort(key=<span class="hljs-built_in">len</span>)
+<span class="hljs-built_in">print</span>(words)
+<span class="hljs-comment"># Output: [&#x27;pie&#x27;, &#x27;book&#x27;, &#x27;banana&#x27;, &#x27;Washington&#x27;]</span>
+
+<span class="hljs-comment"># Using sorted() for the same purpose</span>
+sorted_words = <span class="hljs-built_in">sorted</span>(words, key=<span class="hljs-built_in">len</span>)
+<span class="hljs-built_in">print</span>(sorted_words)
+<span class="hljs-comment"># Output: [&#x27;pie&#x27;, &#x27;book&#x27;, &#x27;banana&#x27;, &#x27;Washington&#x27;]</span>
+</code></pre>
+<p>When using the <code>key</code> parameter, you pass a function that takes a single argument and returns a key to use for sorting purposes. This allows for flexible and powerful sorting capabilities.</p>
+<h2 id="dictionaries">Dictionaries</h2>
+<p><img src="file:////Users/aj/Desktop/bootcamp/Scrimba/scrimba-python/Course Content/notes/image-2.png" alt="alt text"></p>
+<h2 id="filehandling---reading-files">Filehandling - Reading Files</h2>
+<p>File handling in Python is a critical skill for reading from and writing to files on your computer. Python provides built-in functions for opening, reading, writing, and closing files. Here's a basic guide to file handling operations:</p>
+<h3 id="opening-a-file">Opening a File</h3>
+<p>Use the <code>open()</code> function to open a file. The syntax is:</p>
+<pre><code class="language-python">file_object = <span class="hljs-built_in">open</span>(file_name, access_mode)
+</code></pre>
+<ul>
+<li><code>file_name</code> is the name of the file to be opened.</li>
+<li><code>access_mode</code> determines the mode in which the file has to be opened, e.g., read, write, append, etc. Common modes include:
+<ul>
+<li><code>'r'</code> for reading (default),</li>
+<li><code>'w'</code> for writing (creates a new file or truncates the existing file),</li>
+<li><code>'a'</code> for appending,</li>
+<li><code>'b'</code> for binary mode,</li>
+<li><code>'+'</code> for read/write mode.</li>
+</ul>
+</li>
+</ul>
+<h3 id="reading-from-a-file">Reading from a File</h3>
+<ul>
+<li><strong>Read the entire file</strong>: Use <code>file_object.read()</code>.</li>
+<li><strong>Read one line at a time</strong>: Use <code>file_object.readline()</code>.</li>
+<li><strong>Read all lines as a list</strong>: Use <code>file_object.readlines()</code>.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;example.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> file:
+    content = file.read()
+    <span class="hljs-built_in">print</span>(content)
+</code></pre>
+<h3 id="writing-to-a-file">Writing to a File</h3>
+<ul>
+<li><strong>Write a string</strong>: Use <code>file_object.write(string)</code>.</li>
+<li><strong>Write multiple strings</strong>: Use <code>file_object.writelines(list_of_strings)</code>.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;example.txt&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> file:
+    file.write(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
+</code></pre>
+<h3 id="appending-to-a-file">Appending to a File</h3>
+<p>Similar to writing, but opens the file in append mode <code>'a'</code> so that new data will be added at the end of the file.</p>
+<pre><code class="language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;example.txt&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>) <span class="hljs-keyword">as</span> file:
+    file.write(<span class="hljs-string">&quot;\nAppending a new line.&quot;</span>)
+</code></pre>
+<h3 id="closing-a-file">Closing a File</h3>
+<p>It's crucial to close a file after your operations are done to free up system resources. The <code>with</code> statement automatically handles this.</p>
+<pre><code class="language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;example.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> file:
+    content = file.read()
+<span class="hljs-comment"># No need to explicitly call file.close() here</span>
+</code></pre>
+<h3 id="the-with-statement">The <code>with</code> Statement</h3>
+<p>The <code>with</code> statement simplifies exception handling by encapsulating common preparation and cleanup tasks in so-called context managers. For file operations, it ensures that the file is properly closed after its suite finishes, even if an exception is raised on the way.</p>
+<p>This basic overview covers fundamental file handling operations in Python. Depending on your specific needs, you might explore more advanced topics like working with files in binary mode or handling large files in chunks.</p>
+<h2 id="exceptions-tryexcept-raise">Exceptions: Try/Except, Raise</h2>
+<p>In Python, the <code>try</code> and <code>except</code> blocks are used for exception handling, allowing you to catch and handle errors or exceptions that occur during the execution of a block of code. Here's how they work:</p>
+<ul>
+<li><strong><code>try</code> block</strong>: You wrap the code that might throw an exception in a <code>try</code> block.</li>
+<li><strong><code>except</code> block</strong>: If an exception occurs in the <code>try</code> block, the flow of control is passed to an <code>except</code> block, allowing you to handle the error.</li>
+</ul>
+<p>Here's a simple example to illustrate their use:</p>
+<pre><code class="language-python"><span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># Code block where you suspect an error may occur</span>
+    result = <span class="hljs-number">10</span> / <span class="hljs-number">0</span>
+<span class="hljs-keyword">except</span> ZeroDivisionError:
+    <span class="hljs-comment"># Handling a specific exception</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;You can&#x27;t divide by zero!&quot;</span>)
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># Handling any other exceptions</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;An error occurred: <span class="hljs-subst">{e}</span>&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-comment"># This block is executed if no exceptions are raised</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Operation successful.&quot;</span>)
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-comment"># This block is executed no matter what, and is often used for cleanup</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Execution completed.&quot;</span>)
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>try</code> block contains code that will raise a <code>ZeroDivisionError</code>.</li>
+<li>The first <code>except</code> block catches and handles the <code>ZeroDivisionError</code>, printing a message to the user.</li>
+<li>The second <code>except</code> block is a generic catch-all for any other exceptions that might occur. It captures the exception as <code>e</code> and prints a message.</li>
+<li>The <code>else</code> block would run only if no exceptions are caught. Since an exception is raised in the <code>try</code> block, the <code>else</code> block is skipped.</li>
+<li>The <code>finally</code> block runs regardless of whether an exception was caught or not, making it useful for cleanup activities, such as closing files or releasing resources.</li>
+</ul>
+<h2 id="classes-and-objects">Classes and Objects</h2>
+<ul>
+<li>Classes are blueprints</li>
+<li>Objects are the actual things you built</li>
+<li>variables are attributes</li>
+<li>functions are methods</li>
+</ul>
+<p>In Python, classes and objects are the core concepts of object-oriented programming (OOP). A class is a blueprint for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods). Objects are instances of classes; they are the realized version of the class blueprint.</p>
+<h3 id="defining-a-class">Defining a Class</h3>
+<p>A class is defined using the <code>class</code> keyword, followed by the class name and a colon. Inside the class, you can define functions (methods) and variables (attributes) that belong to the class.</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyClass</span>:
+    <span class="hljs-comment"># Class attribute</span>
+    attribute = <span class="hljs-string">&quot;This is a class attribute.&quot;</span>
+
+    <span class="hljs-comment"># Initializer / Instance attributes</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value</span>):
+        self.instance_attribute = value
+
+    <span class="hljs-comment"># Method</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">my_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;The value is <span class="hljs-subst">{self.instance_attribute}</span>&quot;</span>
+</code></pre>
+<ul>
+<li>The <code>__init__</code> method is a special method called a constructor. It's used for initializing instance attributes of a new object.</li>
+<li><code>self</code> represents the instance of the class and allows access to its attributes and methods.</li>
+</ul>
+<h3 id="creating-an-object">Creating an Object</h3>
+<p>To create an object (an instance of a class), you simply call the class using its name and pass the arguments that its <code>__init__</code> method accepts.</p>
+<pre><code class="language-python">my_object = MyClass(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
+</code></pre>
+<h3 id="accessing-attributes-and-methods">Accessing Attributes and Methods</h3>
+<p>You can access an object's attributes and methods using the dot <code>.</code> notation.</p>
+<pre><code class="language-python"><span class="hljs-comment"># Accessing an attribute</span>
+<span class="hljs-built_in">print</span>(my_object.instance_attribute)  <span class="hljs-comment"># Output: Hello, World!</span>
+
+<span class="hljs-comment"># Calling a method</span>
+<span class="hljs-built_in">print</span>(my_object.my_method())  <span class="hljs-comment"># Output: The value is Hello, World!</span>
+</code></pre>
+<h3 id="example-a-simple-class">Example: A Simple Class</h3>
+<p>Here's a simple example of a class representing a Dog. This class will have attributes to store the dog's name and age, and a method to make the dog sit.</p>
+<pre><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):
+        self.name = name
+        self.age = age
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">sit</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">{self.name}</span> is now sitting.&quot;</span>)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">birthday</span>(<span class="hljs-params">self</span>):
+        self.age += <span class="hljs-number">1</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Happy Birthday <span class="hljs-subst">{self.name}</span>! You&#x27;re now <span class="hljs-subst">{self.age}</span> years old.&quot;</span>)
+
+<span class="hljs-comment"># Creating instances of Dog</span>
+my_dog = Dog(<span class="hljs-string">&quot;Rex&quot;</span>, <span class="hljs-number">2</span>)
+your_dog = Dog(<span class="hljs-string">&quot;Luna&quot;</span>, <span class="hljs-number">3</span>)
+
+<span class="hljs-comment"># Calling methods on our Dog instance</span>
+my_dog.sit()
+your_dog.birthday()
+</code></pre>
+<p>This example illustrates how you can encapsulate behaviors (like sitting or celebrating a birthday) and attributes (like name and age) related to a dog within a class. Each <code>Dog</code> object created from the <code>Dog</code> class can have its own name and age, demonstrating how classes allow for data encapsulation and reuse of code.</p>
+<h2 id="inheritance">Inheritance</h2>
+<p>Class inheritance in Python allows one class (the child or subclass) to inherit the attributes and methods of another class (the parent or superclass). This mechanism facilitates code reuse and creates a hierarchical organization of classes. Inheritance models an &quot;is a&quot; relationship between two entities.</p>
+<p>Basic Syntax of Inheritance
+Here's how you can define a class that inherits from another class in Python:</p>
+<pre><code class="language-python">Copy
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        self.attribute = <span class="hljs-string">&quot;This is a parent attribute&quot;</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">parent_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is a parent method&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span>(<span class="hljs-title class_ inherited__">Parent</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">child_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;This is a child method&quot;</span>)
+In this example, Child inherits <span class="hljs-keyword">from</span> Parent, meaning Child instances can access Parent<span class="hljs-string">&#x27;s attributes and methods.
+
+Overriding Methods
+A child class can override methods of the parent class if it needs to implement a different behavior for the same method name:
+
+python
+Copy
+class Parent:
+    def common_method(self):
+        print(&quot;Parent&#x27;</span>s common_method()<span class="hljs-string">&quot;)
+
+class Child(Parent):
+    def common_method(self):
+        print(&quot;</span>Child<span class="hljs-string">&#x27;s overridden common_method()&quot;)
+Extending the Parent&#x27;</span>s Initialization <span class="hljs-keyword">with</span> <span class="hljs-built_in">super</span>()
+Often, yo<span class="hljs-string">u&#x27;ll want to add some initialization to the child class while still calling the parent&#x27;</span>s initialization method. You can do this <span class="hljs-keyword">with</span> <span class="hljs-built_in">super</span>():
+
+python
+Copy
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value</span>):
+        self.value = value
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span>(<span class="hljs-title class_ inherited__">Parent</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value, extra</span>):
+        <span class="hljs-built_in">super</span>().__init__(value)  <span class="hljs-comment"># Call parent&#x27;s __init__</span>
+        self.extra = extra
+Multi-level Inheritance
+Python supports multi-level inheritance, where a <span class="hljs-keyword">class</span> <span class="hljs-title class_">can</span> inherit <span class="hljs-keyword">from</span> a child <span class="hljs-keyword">class</span>, creating a hierarchy of inheritance.
+
+python
+Copy
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Grandparent</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">grandparent_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Grandparent method&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span>(<span class="hljs-title class_ inherited__">Grandparent</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">parent_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Parent method&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span>(<span class="hljs-title class_ inherited__">Parent</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">child_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Child method&quot;</span>)
+Multiple Inheritance
+Python also supports multiple inheritance, where a <span class="hljs-keyword">class</span> <span class="hljs-title class_">can</span> inherit <span class="hljs-keyword">from</span> more than one parent <span class="hljs-keyword">class</span>. This should be used <span class="hljs-keyword">with</span> caution to avoid complexity <span class="hljs-keyword">and</span> ambiguity.
+
+python
+Copy
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Father</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">skill</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Father&#x27;s skill&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Mother</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">skill</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Mother&#x27;s skill&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span>(Father, Mother):
+    <span class="hljs-keyword">pass</span>
+
+child = Child()
+child.skill()  <span class="hljs-comment"># This will call the first parent&#x27;s skill method in the order of inheritance.</span>
+When using multiple inheritance, Python follows the method resolution order (MRO) to determine which method to use <span class="hljs-keyword">in</span> case of conflicts. You can view the MRO of a <span class="hljs-keyword">class</span> <span class="hljs-title class_">by</span> using the ClassName.__mro__ attribute <span class="hljs-keyword">or</span> the <span class="hljs-built_in">help</span>(ClassName) command.
+
+Inheritance <span class="hljs-keyword">is</span> a powerful feature of <span class="hljs-built_in">object</span>-oriented programming that promotes code reuse <span class="hljs-keyword">and</span> creates a logical <span class="hljs-keyword">and</span> hierarchical organization of classes.
+</code></pre>
+<h2 id="modules">Modules</h2>
+<p>In Python, a module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> added. Modules in Python are a way to organize code into reusable parts, making it easier to understand and maintain the codebase. Modules can define functions, classes, and variables, as well as runnable code.</p>
+<h3 id="creating-a-module">Creating a Module</h3>
+<p>To create a module, simply save your code in a new file with a <code>.py</code> extension. For example, let's create a simple module named <code>mymodule.py</code>:</p>
+<pre><code class="language-python"><span class="hljs-comment"># mymodule.py</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Hello, <span class="hljs-subst">{name}</span>!&quot;</span>)
+
+favorite_food = <span class="hljs-string">&quot;pizza&quot;</span>
+</code></pre>
+<h3 id="using-a-module">Using a Module</h3>
+<p>You can use any Python file as a module by executing an <code>import</code> statement in another Python script or interactive instance.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> mymodule
+
+mymodule.greet(<span class="hljs-string">&quot;Alice&quot;</span>)  <span class="hljs-comment"># Output: Hello, Alice!</span>
+<span class="hljs-built_in">print</span>(mymodule.favorite_food)  <span class="hljs-comment"># Output: pizza</span>
+</code></pre>
+<h3 id="importing-specific-items">Importing Specific Items</h3>
+<p>You can choose to import specific attributes or functions from a module directly into your namespace:</p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> mymodule <span class="hljs-keyword">import</span> greet, favorite_food
+
+greet(<span class="hljs-string">&quot;Bob&quot;</span>)  <span class="hljs-comment"># Output: Hello, Bob!</span>
+<span class="hljs-built_in">print</span>(favorite_food)  <span class="hljs-comment"># Output: pizza</span>
+</code></pre>
+<h3 id="renaming-a-module">Renaming a Module</h3>
+<p>You can rename a module or its components on import using the <code>as</code> keyword. This is particularly useful when dealing with modules or functions with long or conflicting names:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> mymodule <span class="hljs-keyword">as</span> mm
+
+mm.greet(<span class="hljs-string">&quot;Carol&quot;</span>)  <span class="hljs-comment"># Output: Hello, Carol!</span>
+</code></pre>
+<p>Or for specific items:</p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> mymodule <span class="hljs-keyword">import</span> greet <span class="hljs-keyword">as</span> g
+
+g(<span class="hljs-string">&quot;Dave&quot;</span>)  <span class="hljs-comment"># Output: Hello, Dave!</span>
+</code></pre>
+<h3 id="the-dir-function">The <code>dir()</code> Function</h3>
+<p>To find out which names a module defines, you can use the <code>dir()</code> function. It returns a sorted list of strings containing the names defined by a module.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> mymodule
+
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">dir</span>(mymodule))
+</code></pre>
+<p>This will list all types of names: variables, modules, functions, etc.</p>
+<h3 id="the-__name__-attribute">The <code>__name__</code> Attribute</h3>
+<p>Every module has a built-in attribute <code>__name__</code>, which returns the name of the module. However, when a module is run as the main program, <code>__name__</code> is set to the string <code>&quot;__main__&quot;</code>.</p>
+<pre><code class="language-python"><span class="hljs-comment"># mymodule.py</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The module is being run directly&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The module is being imported&quot;</span>)
+</code></pre>
+<p>This technique allows for the module's code to be used both as an importable module and as a standalone script by distinguishing the context in which it is run.</p>
+<p>Modules are a fundamental concept in Python and form the basis of many advanced programming patterns and techniques, including packages and namespaces.</p>
+<h2 id="zip--unzip">Zip / Unzip</h2>
+<p>In Python, the zip() function is a built-in function that aggregates elements from two or more iterables (like lists or tuples) and returns an iterator of tuples, where each tuple contains elements from the iterables passed to zip() based on their positions. This is particularly useful when you need to pair or group elements from different sequences together.</p>
+<p>Given your selected text with lists nums, letters, and names, here's how you could use the zip() function:</p>
+<p>Using zip()
+python
+Copy
+nums = [1,2,3,4]
+letters = ['a','b','c','d']
+names = ['John','Eric','Michael','Graham','Joe']</p>
+<h1 id="zip-the-lists-together">Zip the lists together</h1>
+<p>zipped_list = list(zip(nums, letters, names))</p>
+<p>print(zipped_list)
+This would output:</p>
+<p>css
+Copy
+[(1, 'a', 'John'), (2, 'b', 'Eric'), (3, 'c', 'Michael'), (4, 'd', 'Graham')]
+Each tuple in the resulting list contains one element from each of the original lists, grouped by their position. Note that because names has more elements than the other lists, the extra elements ('Joe') are ignored by zip() because it stops when the shortest input iterable is exhausted.</p>
+<p>Unzipping with zip()
+You can also &quot;unzip&quot; a list of tuples into separate lists using the zip() function combined with the unpacking operator *. This essentially reverses the zip operation:</p>
+<p>python
+Copy</p>
+<h1 id="assuming-zipped_list-is-the-result-of-the-zip-operation-above">Assuming zipped_list is the result of the zip operation above</h1>
+<p>unzipped = zip(*zipped_list)</p>
+<p>nums_unzipped, letters_unzipped, names_unzipped = list(unzipped)</p>
+<p>print(nums_unzipped)
+print(letters_unzipped)
+print(names_unzipped)
+This would output:</p>
+<p>arduino
+Copy
+(1, 2, 3, 4)
+('a', 'b', 'c', 'd')
+('John', 'Eric', 'Michael', 'Graham')
+Here, nums_unzipped, letters_unzipped, and names_unzipped are tuples containing the grouped elements from the original lists.</p>
+<p>Remember, the result of zip(*zipped_list) is an iterator. To see the contents, you need to convert it to a list or iterate through it. Also, the unzip operation returns tuples for each of the original lists.</p>
+<h2 id="lambda-functions-1-and-2">Lambda Functions 1 and 2</h2>
+<p>Lambda functions in Python are small anonymous functions defined with the <code>lambda</code> keyword. They can have any number of arguments but can only have one expression. Lambda functions are often used for short, simple functions that are convenient to define at the point where they are used, typically with functions like <code>map()</code>, <code>filter()</code>, and <code>sorted()</code> among others.</p>
+<h3 id="syntax">Syntax</h3>
+<p>The basic syntax of a lambda function is:</p>
+<pre><code class="language-python"><span class="hljs-keyword">lambda</span> arguments: expression
+</code></pre>
+<p>The expression is executed and returned when the lambda function is called.</p>
+<h3 id="examples">Examples</h3>
+<h4 id="example-1-adding-two-numbers">Example 1: Adding Two Numbers</h4>
+<pre><code class="language-python">add = <span class="hljs-keyword">lambda</span> x, y: x + y
+<span class="hljs-built_in">print</span>(add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>))  <span class="hljs-comment"># Output: 8</span>
+</code></pre>
+<h4 id="example-2-squaring-a-number">Example 2: Squaring a Number</h4>
+<pre><code class="language-python">square = <span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(square(<span class="hljs-number">4</span>))  <span class="hljs-comment"># Output: 16</span>
+</code></pre>
+<h4 id="example-3-filtering-a-list">Example 3: Filtering a List</h4>
+<p>Here, <code>lambda</code> is used with <code>filter()</code> to filter out even numbers from a list.</p>
+<pre><code class="language-python">nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+even_nums = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x: (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>), nums))
+<span class="hljs-built_in">print</span>(even_nums)  <span class="hljs-comment"># Output: [2, 4, 6]</span>
+</code></pre>
+<h4 id="example-4-sorting-a-list-of-tuples">Example 4: Sorting a List of Tuples</h4>
+<p>Using <code>lambda</code> with <code>sorted()</code> to sort a list of tuples by the second item:</p>
+<pre><code class="language-python">tuples_list = [(<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;z&#x27;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;a&#x27;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;q&#x27;</span>)]
+sorted_list = <span class="hljs-built_in">sorted</span>(tuples_list, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">1</span>])
+<span class="hljs-built_in">print</span>(sorted_list)  <span class="hljs-comment"># Output: [(2, &#x27;a&#x27;), (3, &#x27;q&#x27;), (1, &#x27;z&#x27;)]</span>
+</code></pre>
+<h3 id="advantages-and-disadvantages">Advantages and Disadvantages</h3>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>Lambda functions are concise and can make the code more readable, especially when used in combination with functions like <code>map()</code>, <code>filter()</code>, and <code>sorted()</code>.</li>
+<li>They are useful for creating small throwaway functions without needing to formally define them using <code>def</code>.</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li>They are limited to expressions, which means they can't contain multiple expressions or statements like loops or multiple return statements.</li>
+<li>The use of lambda functions can sometimes make the code harder to understand, especially for beginners or in cases where the lambda function is complex.</li>
+</ul>
+<p>Lambda functions offer a compact way to write functions in Python, making them a useful tool in many programming scenarios.</p>
+<h2 id="comprehensions---lists">Comprehensions - Lists</h2>
+<p><img src="file:////Users/aj/Desktop/bootcamp/Scrimba/scrimba-python/Course Content/notes/image-3.png" alt="alt text"></p>
+<h2 id="comprehensions---dictionary">Comprehensions - Dictionary</h2>
+<p>Python comprehensions are a concise, readable way to create lists, sets, dictionaries, and generators. They provide a more syntactically elegant method of creating collections compared to traditional loop and conditional statements. Comprehensions can make your code more expressive and easier to understand.</p>
+<p>List Comprehensions
+List comprehensions return a list, created from iterating over an iterable and optionally filtering items based on a condition.</p>
+<p>Syntax:</p>
+<p>python
+Copy
+[expression for item in iterable if condition]
+Example: Create a list of squares for even numbers from 0 to 9.</p>
+<p>python
+Copy
+squares_even = [x**2 for x in range(10) if x % 2 == 0]
+print(squares_even)  # Output: [0, 4, 16, 36, 64]
+Set Comprehensions
+Set comprehensions return a set, which is similar to list comprehensions but produces a set, which means duplicate values are eliminated.</p>
+<p>Syntax:</p>
+<p>python
+Copy
+{expression for item in iterable if condition}
+Example: Create a set of squared values for numbers from 0 to 9.</p>
+<p>python
+Copy
+squares_set = {x**2 for x in range(10)}
+print(squares_set)  # Output: {0, 1, 64, 4, 36, 9, 16, 49, 81, 25}
+Dictionary Comprehensions
+Dictionary comprehensions return a dictionary. The expression defines both the key and the value.</p>
+<p>Syntax:</p>
+<p>python
+Copy
+{key_expression: value_expression for item in iterable if condition}
+Example: Create a dictionary where keys are numbers from 1 to 5 and values are their squares.</p>
+<p>python
+Copy
+squares_dict = {x: x**2 for x in range(1, 6)}
+print(squares_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+Generator Expressions
+Generator expressions are similar to list comprehensions but produce a generator instead of a list. Generators are iterators that yield items one at a time, which is more memory efficient than building the entire collection at once.</p>
+<p>Syntax:</p>
+<p>python
+Copy
+(expression for item in iterable if condition)
+Example: Create a generator for even numbers from 0 to 9.</p>
+<p>python
+Copy
+evens_gen = (x for x in range(10) if x % 2 == 0)
+print(next(evens_gen))  # Output: 0
+print(next(evens_gen))  # Output: 2</p>
+<h1 id="and-so-on">And so on...</h1>
+<p>Comprehensions can significantly reduce the amount of code required to create new collections and make your code cleaner and more Pythonic.</p>
+<h2 id="randomness">Randomness</h2>
+<p>The <code>random</code> module in Python provides a suite of functions for generating pseudo-random numbers and performing random operations, such as selecting random items from a list or shuffling a list in place. This module is quite useful in simulations, games, testing, and anywhere else where random behavior is desired.</p>
+<p>Here’s an overview of some commonly used functions and features within the <code>random</code> module:</p>
+<h3 id="importing-the-module">Importing the Module</h3>
+<p>Before you can use any functions in the <code>random</code> module, you need to import it:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> random
+</code></pre>
+<h3 id="generating-random-numbers">Generating Random Numbers</h3>
+<ul>
+<li>
+<p><strong><code>random.random()</code></strong>: Return the next random floating point number between 0.0 and 1.0.</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(random.random())
+</code></pre>
+</li>
+<li>
+<p><strong><code>random.uniform(a, b)</code></strong>: Return a random floating point number between the values <code>a</code> and <code>b</code> (both included).</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(random.uniform(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))
+</code></pre>
+</li>
+<li>
+<p><strong><code>random.randint(a, b)</code></strong>: Return a random integer <code>N</code> such that <code>a &lt;= N &lt;= b</code>.</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>))
+</code></pre>
+</li>
+</ul>
+<h3 id="picking-elements-randomly">Picking Elements Randomly</h3>
+<ul>
+<li>
+<p><strong><code>random.choice(seq)</code></strong>: Return a random element from the non-empty sequence <code>seq</code>.</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(random.choice([<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>]))
+</code></pre>
+</li>
+<li>
+<p><strong><code>random.choices(population, k)</code></strong>: Return a list of <code>k</code> elements chosen from the <code>population</code> with replacement.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> string
+letter_numbers = string.ascii_letters + string.digits
+word = random.choices(letter_numbers, k=<span class="hljs-number">7</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;</span>.join(word))
+</code></pre>
+</li>
+<li>
+<p><strong><code>random.sample(population, k)</code></strong>: Return a <code>k</code> length list of unique elements chosen from the <code>population</code>. Used for random sampling without replacement.</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(random.sample(<span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>), <span class="hljs-number">10</span>))
+</code></pre>
+</li>
+</ul>
+<h3 id="shuffling-elements">Shuffling Elements</h3>
+<ul>
+<li>
+<p><strong><code>random.shuffle(x[, random])</code></strong>: Shuffle the sequence <code>x</code> in place.</p>
+<pre><code class="language-python">items = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+random.shuffle(items)
+<span class="hljs-built_in">print</span>(items)
+</code></pre>
+</li>
+</ul>
+<h3 id="seeding">Seeding</h3>
+<ul>
+<li>
+<p><strong><code>random.seed(a=None, version=2)</code></strong>: Initialize the random number generator. If you use the same seed value before generating random numbers, you will get the same sequence of numbers.</p>
+<pre><code class="language-python">random.seed(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(random.random()) <span class="hljs-comment"># This will always print the same number every time it&#x27;s run with seed 1.</span>
+</code></pre>
+</li>
+</ul>
+<p>Using the <code>random</code> module can add interesting dynamics to Python scripts, especially in areas requiring an element of unpredictability.</p>
+<h2 id="timeit-and-performance">Timeit and performance</h2>
+<p>The <code>timeit</code> module in Python provides a simple way to time small bits of Python code. It has both a Command-Line Interface (CLI) and a callable one. <code>timeit</code> is especially useful for timing code to identify performance bottlenecks or compare different coding approaches in terms of execution speed.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<h4 id="using-timeit-in-a-python-script">Using <code>timeit</code> in a Python Script</h4>
+<p>To use <code>timeit</code> in a script, you can use the <code>timeit.timeit()</code> function, which takes a statement (a piece of code as a string) that you want to time, along with the number of times you want the statement to be executed (<code>number</code>). The function returns the total time taken to execute the statement the specified number of times.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> timeit
+
+<span class="hljs-comment"># Time how long it takes to execute &#x27;sum(range(1000))&#x27; 1000 times.</span>
+execution_time = timeit.timeit(<span class="hljs-string">&#x27;sum(range(1000))&#x27;</span>, number=<span class="hljs-number">1000</span>)
+<span class="hljs-built_in">print</span>(execution_time)
+</code></pre>
+<h4 id="using-timeit-with-function-calls">Using <code>timeit</code> with Function Calls</h4>
+<p>If you wish to time a function call, it's more convenient to pass the function and its arguments separately using the <code>stmt</code> and <code>setup</code> parameters.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> timeit
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">my_function</span>():
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1000</span>))
+
+execution_time = timeit.timeit(stmt=my_function, number=<span class="hljs-number">1000</span>)
+<span class="hljs-built_in">print</span>(execution_time)
+</code></pre>
+<h3 id="using-timeit-from-the-command-line">Using <code>timeit</code> from the Command Line</h3>
+<p>You can also use <code>timeit</code> from the command line, which is useful for quick tests:</p>
+<pre><code class="language-sh">python -m timeit <span class="hljs-string">&quot;sum(range(1000))&quot;</span>
+</code></pre>
+<p>This command will report the time it takes to execute <code>sum(range(1000))</code>.</p>
+<h3 id="setup-code">Setup Code</h3>
+<p>For more complex timing tasks where you need to set up some context (for example, importing a module or setting up variables), you can use the <code>setup</code> argument to provide setup code that is executed once at the beginning:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> timeit
+
+execution_time = timeit.timeit(
+    <span class="hljs-string">&#x27;my_function()&#x27;</span>, 
+    setup=<span class="hljs-string">&#x27;from __main__ import my_function&#x27;</span>, 
+    number=<span class="hljs-number">1000</span>
+)
+<span class="hljs-built_in">print</span>(execution_time)
+</code></pre>
+<h3 id="timing-loops-and-list-comprehensions">Timing Loops and List Comprehensions</h3>
+<p>When timing loops or list comprehensions, remember that <code>timeit</code> executes the statement in a separate namespace, so any changes made by the statement to objects in its namespace do not affect the namespace from which <code>timeit</code> is called.</p>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>For more accurate timing, increase the <code>number</code> of executions. This is particularly useful for very fast functions where execution time might be shorter than the timer's resolution.</li>
+<li>Use the <code>repeat()</code> function for multiple timing runs when looking for a more reliable average execution time, as it can help mitigate fluctuations in timing results.</li>
+</ul>
+<h2 id="project---crypto-machine">Project - Crypto Machine</h2>
+<h2 id="project---math-tutor">Project - Math Tutor</h2>
+<h2 id="project---marble--trading-game">Project - Marble / Trading Game</h2>
+<h2 id="bonus-project---palindromes">Bonus: Project - Palindromes</h2>
+
+            
+            
+        </body>
+        </html>
